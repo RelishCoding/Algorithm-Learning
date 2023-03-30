@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class T455 {
@@ -9,6 +8,7 @@ public class T455 {
         int count=0;
         int index=0;
         for (int i=0;i<s.length;i++){
+            //先判断index是否越界，再判断饼干和胃口的大小关系
             if (index<g.length && s[i]>=g[index]){
                 count++;
                 index++;
@@ -24,6 +24,7 @@ public class T455 {
         int count=0;
         int index=s.length-1;
         for (int i=g.length-1;i>=0;i--){
+            //先判断index是否越界，再判断饼干和胃口的大小关系
             if (index>=0 && s[index]>=g[i]){
                 count++;
                 index--;
