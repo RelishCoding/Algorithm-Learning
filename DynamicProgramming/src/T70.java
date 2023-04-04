@@ -1,7 +1,7 @@
 public class T70 {
     //非压缩版本
     /*public int climbStairs(int n) {
-        //当n=1 或者 n=2时，直接返回n即可，没必要再开数组
+        //当 n=1 或者 n=2时，直接返回n即可，没必要再开数组
         //同时这也是为了防止后面数组索引越界异常
         if (n<=2)
             return n;
