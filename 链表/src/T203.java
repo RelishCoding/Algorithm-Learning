@@ -1,4 +1,5 @@
 public class T203 {
+    //直接使用原来的链表来进行删除操作
     /*public ListNode removeElements(ListNode head, int val) {
         // 删除头结点
         // 注意这里要用while而不能用if
@@ -22,6 +23,7 @@ public class T203 {
         return head;
     }*/
 
+    //设置一个虚拟头结点再进行删除操作
     public ListNode removeElements(ListNode head, int val) {
         if (head==null)
             return head;
@@ -38,12 +40,13 @@ public class T203 {
         }
         return dummyHead.next;
     }
+
+    private class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
 }
 
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-}
