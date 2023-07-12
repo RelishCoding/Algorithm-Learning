@@ -1,14 +1,11 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class T102 {
     //迭代法，使用队列
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root==null){
-            return null;
+            return result;
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
