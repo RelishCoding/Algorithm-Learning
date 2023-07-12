@@ -2,7 +2,7 @@ import java.util.*;
 
 public class T107 {
     //迭代法，使用队列
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
         //List<List<Integer>> result = new ArrayList<>();
         LinkedList<List<Integer>> result = new LinkedList<>();
         if (root==null){
