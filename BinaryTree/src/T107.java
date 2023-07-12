@@ -35,6 +35,26 @@ public class T107 {
         return result;
     }
 
+    //递归法
+    /*public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        int depth = 0;
+        order(root,result,depth);
+        Collections.reverse(result);
+        return result;
+    }
+    private void order(TreeNode root, List<List<Integer>> result, int depth) {
+        if (root==null){
+            return;
+        }
+        if (result.size()==depth){
+            result.add(new ArrayList<>());
+        }
+        result.get(depth).add(root.val);
+        order(root.left,result,depth+1);
+        order(root.right,result,depth+1);
+    }*/
+
     private class TreeNode { 
         int val;
         TreeNode left;
