@@ -1,43 +1,48 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
+/**
+ * LeetCode 637 二叉树的层平均值
+ */
 public class T637 {
-    //迭代法，使用队列
-    /*public List<Double> averageOfLevels(TreeNode root) {
+    // 层序遍历，使用队列
+    public List<Double> averageOfLevels(TreeNode root) {
         List<Double> result = new ArrayList<>();
-        if (root==null){
+        if (root == null) {
             return result;
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
 
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             int size = queue.size();
-            double sum = 0;//统计每一层的和
-            //这里一定要使用固定大小size，不要使用que.size()，因为que.size是不断变化的
+            double sum = 0; // 统计每一层的和
+            // 这里一定要使用固定大小size，不要使用que.size()，因为que.size是不断变化的
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 sum += node.val;
-                if (node.left!=null){
+                if (node.left != null) {
                     queue.offer(node.left);
                 }
-                if (node.right!=null){
+                if (node.right != null) {
                     queue.offer(node.right);
                 }
             }
-            result.add(sum/size);//将每一层均值放进结果集
+            result.add(sum / size); // 将每一层均值放进结果集
         }
 
         return result;
-    }*/
+    }
 
-    //递归法
-    public List<Double> averageOfLevels(TreeNode root) {
+    // 递归法
+    public List<Double> averageOfLevels2(TreeNode root) {
         List<Double> result = new ArrayList<>();
         List<Double> sums = new ArrayList<>();
         List<Integer> counts = new ArrayList<>();
-        dfs(root,0,counts,sums);
+        dfs(root, 0, counts, sums);
         for (int i = 0; i < sums.size(); i++) {
             result.add(sums.get(i) / counts.get(i));
         }
@@ -57,18 +62,5 @@ public class T637 {
         }
         dfs(root.left, depth + 1, counts, sums);
         dfs(root.right, depth + 1, counts, sums);
-    }
-
-    private class TreeNode { 
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
     }
 }
