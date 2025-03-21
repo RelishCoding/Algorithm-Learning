@@ -1,30 +1,37 @@
+/**
+ * LeetCode 509 斐波那契数
+ */
 public class T509 {
+    // 压缩版本
     public int fib(int n) {
-        //压缩版本
-        if(n<=1)
+        if (n <= 1)
             return n;
-        int a=0,b=1,c=0;
-        for (int i=2;i<=n;i++){
-            c=a+b;
-            a=b;
-            b=c;
+        int first = 0, second = 1, third = 0;
+        for (int i = 2; i <= n; i++) {
+            third = first + second;
+            first = second;
+            second = third;
         }
-        return c;
+        return third;
+    }
 
-        //非压缩版本
-        /*if(n<=1)
+    // 非压缩版本
+    public int fib2(int n) {
+        if (n <= 1)
             return n;
-        int[] dp=new int[n+1];
-        dp[0]=0;
-        dp[1]=1;
-        for(int i=2;i<=n;i++){
-            dp[i]=dp[i-1]+dp[i-2];
+        int[] dp = new int[n + 1];
+        dp[0] = 0;
+        dp[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
-        return dp[n];*/
+        return dp[n];
+    }
 
-        //递归版本
-        /*if (n<=1)
+    // 递归版本
+    public int fib3(int n) {
+        if (n <= 1)
             return n;
-        return fib(n-1)+fib(n-2);*/
+        return fib3(n - 1) + fib3(n - 2);
     }
 }
