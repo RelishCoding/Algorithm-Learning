@@ -1,3 +1,6 @@
+/**
+ * LeetCode 283 移动零
+ */
 public class T283 {
     /**
      * 双指针，遇到非零元素直接交换
@@ -33,7 +36,7 @@ public class T283 {
     }
 
     /**
-     * 暴力解法
+     * 暴力解法一，先移动最后置0
      * @param nums
      */
     public void moveZeroes2(int[] nums) {
@@ -49,6 +52,21 @@ public class T283 {
         }
         for (int i = size; i < nums.length; i++) {
             nums[i] = 0;
+        }
+    }
+
+    // 暴力解法二，边移动边置0
+    public void moveZeroes4(int[] nums) {
+        int size = nums.length;
+        for (int i = 0; i < size; i++) {
+            if (nums[i] == 0) {
+                for (int j = i + 1; j < size; j++) {
+                    nums[j - 1] = nums[j];
+                }
+                nums[size -1] = 0;
+                i--;
+                size--;
+            }
         }
     }
 }
