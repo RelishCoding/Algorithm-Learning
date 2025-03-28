@@ -1,5 +1,8 @@
 import java.util.Stack;
 
+/**
+ * LeetCode 844 比较含退格的字符串
+ */
 public class T844 {
     /**
      * 双指针从后遍历

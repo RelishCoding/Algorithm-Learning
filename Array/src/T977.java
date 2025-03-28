@@ -1,5 +1,8 @@
 import java.util.Arrays;
 
+/**
+ * LeetCode 977 有序数组的平方
+ */
 public class T977 {
     /**
      * 双指针法

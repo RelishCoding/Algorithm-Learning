@@ -1,3 +1,6 @@
+/**
+ * LeetCode 27 移除元素
+ */
 public class T27 {
     /**
      * 相向双指针
